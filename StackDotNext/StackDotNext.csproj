@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38B788F7-6607-4C93-94CF-85A913530314}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StackDotNext</RootNamespace>
+    <AssemblyName>StackDotNext</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OpenStack\BlockStorage\Models\Volumes.cs" />
+    <Compile Include="OpenStack\Compute\ComputeClient.cs" />
+    <Compile Include="OpenStack\Compute\IComputeClient.cs" />
+    <Compile Include="OpenStack\Compute\Models\CreateImageRequest.cs" />
+    <Compile Include="OpenStack\Compute\Models\ChangePasswordRequest.cs" />
+    <Compile Include="OpenStack\Compute\Models\Common\Link.cs" />
+    <Compile Include="OpenStack\Compute\Models\Common\Metadata.cs" />
+    <Compile Include="OpenStack\Compute\Models\CreateServerRequest.cs" />
+    <Compile Include="OpenStack\Compute\Models\Flavors.cs" />
+    <Compile Include="OpenStack\Compute\Models\Images.cs" />
+    <Compile Include="OpenStack\Compute\Models\InstanceActions.cs" />
+    <Compile Include="OpenStack\Compute\Models\Keypairs.cs" />
+    <Compile Include="OpenStack\Compute\Models\RebootServerRequest.cs" />
+    <Compile Include="OpenStack\Compute\Models\RebuildServerRequest.cs" />
+    <Compile Include="OpenStack\Compute\Models\ResizeRequests.cs" />
+    <Compile Include="OpenStack\Compute\Models\Servers.cs" />
+    <Compile Include="OpenStack\Compute\Models\UpdateServerRequest.cs" />
+    <Compile Include="OpenStack\Identity\IdentityClient.cs" />
+    <Compile Include="OpenStack\Identity\Models\Tokens.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThirdParty\Rackspace\CloudIdentity\CloudIdentityClient.cs" />
+    <Compile Include="ThirdParty\Rackspace\CloudIdentity\Models\Tokens.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OpenStack\ObjectStorage\Models\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
